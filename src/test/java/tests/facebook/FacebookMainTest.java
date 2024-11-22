@@ -31,6 +31,4 @@ public class FacebookMainTest extends BaseTest {
         WaitUtils.applyGlobalWait();
 
     }
-
-
 }
