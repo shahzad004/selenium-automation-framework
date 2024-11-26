@@ -20,7 +20,7 @@ public class CreateAmazonAccount extends BaseTest {
         amazonSignInPage.clickOnCreateYourAmazonAccount();
         WaitUtils.applyGlobalWait();
         amazonCreateYourAccountPage.enterFullName("John Doe");
-        amazonCreateYourAccountPage.enterEmailAddress("JohnDoe@gmail.com");
+        amazonCreateYourAccountPage.enterEmailAddressOrPhoneNumber("JohnDoe@gmail.com");
         amazonCreateYourAccountPage.enterPassword("JohnDoe!@#123");
         amazonCreateYourAccountPage.reEnterPassword("JohnDoe!@#123");
         amazonCreateYourAccountPage.clickOnContinueButton();
