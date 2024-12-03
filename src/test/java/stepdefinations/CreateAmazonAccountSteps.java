@@ -1,43 +1,48 @@
 package stepdefinations;
 
 import base.BaseTest;
-import config.ConfigManager;
+import enums.WaitStrategy;
+import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.After;
-import org.junit.Before;
+import org.junit.Assert;
 import pages.amazon.CreateYourAmazonAccount_PF;
-import pages.amazon.Dashboard_PF;
+import pages.amazon.DashboardPage;
 import pages.amazon.SignInPage_PF;
+import utils.WaitUtils;
 
 public class CreateAmazonAccountSteps extends BaseTest {
 
-    Dashboard_PF amazonDashboardPage;
+    DashboardPage amazonDashboardPage;
     SignInPage_PF amazonSignInPage;
     CreateYourAmazonAccount_PF amazonCreateAccountPage;
 
     @Before
     public void setupDriver() {
         setup();
-        this.amazonDashboardPage = new Dashboard_PF(driver);
+
+        this.amazonDashboardPage =  new DashboardPage(driver);
         this.amazonSignInPage = new SignInPage_PF(driver);
         this.amazonCreateAccountPage = new CreateYourAmazonAccount_PF(driver);
     }
 
     @Given("I am on the amazon web page")
     public void I_am_on_the_amazon_web_page() {
-        driver.get(ConfigManager.getProperty("baseUrl"));
+        Assert.assertEquals("failed", "https://www.amazon.com/", driver.getCurrentUrl());
     }
 
-    @When("I click on signIn button")
-    public void I_click_on_signIn_button() {
+    @When("I will click on signIn button")
+    public void I_will_click_on_signIn_button() {
+        WaitUtils.applyWait(driver, amazonDashboardPage.signIn, WaitStrategy.VISIBLE);
+        WaitUtils.applyWait(driver, amazonDashboardPage.signIn, WaitStrategy.CLICKABLE);
         amazonDashboardPage.clickOnSignInButton();
     }
 
-    @Then("I click on Create amazon account button")
-    public void I_click_on_create_amazon_account_button() {
+    @Then("I will click on Create amazon account button")
+    public void I_will_click_on_create_amazon_account_button() {
         amazonSignInPage.clickOnCreateYourAmazonAccount();
     }
 
@@ -46,9 +51,9 @@ public class CreateAmazonAccountSteps extends BaseTest {
         amazonCreateAccountPage.enterFullName("John Doe");
     }
 
-    @And("I will enter phone number as value for phone number field")
-    public void I_will_enter_phone_number_as_value_for_phone_number_field() {
-        amazonCreateAccountPage.enterEmailAddressOrPhoneNumber(303313333);
+    @And("I will enter valid {string} as input")
+    public void I_will_enter_valid_input(String inputType) {
+        amazonCreateAccountPage.enterEmailAddressOrPhoneNumber(inputType);
     }
 
 
@@ -62,8 +67,8 @@ public class CreateAmazonAccountSteps extends BaseTest {
         amazonCreateAccountPage.reEnterPassword("JohnDoe!@#123");
     }
 
-    @Then("I click on verify mobile number button")
-    public void I_click_on_verify_mobile_number_button() {
+    @Then("I click on continue button")
+    public void I_click_on_continue_button() {
         amazonCreateAccountPage.clickOnContinueButton();
     }
 

@@ -33,7 +33,7 @@ public class WaitUtils {
         }
     }
 
-    public static WebElement applyWait(WebDriver driver, WebElement webElement, WaitStrategy waitStrategy ) {
+    public static WebElement applyWait(WebDriver driver, WebElement webElement, WaitStrategy waitStrategy) {
         WebDriverWait wait = new WebDriverWait(driver, getTimeout());
         switch ( waitStrategy ) {
             case CLICKABLE:
