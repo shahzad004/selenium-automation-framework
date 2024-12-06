@@ -11,7 +11,13 @@ public class CreateBrowser extends Base {
 
     @Test
     public void createBrowserTest() throws InterruptedException {
-       Thread.sleep(1000);
+       Thread.sleep(2000);
    }
+
+    public static void main(String[] args) {
+
+        DriverManager.initializeWebDriver();
+
+    }
 
 }

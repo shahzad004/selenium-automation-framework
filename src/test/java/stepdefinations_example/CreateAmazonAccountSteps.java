@@ -1,4 +1,4 @@
-package stepdefinations;
+package stepdefinations_example;
 
 import base.BaseTest;
 import enums.WaitStrategy;

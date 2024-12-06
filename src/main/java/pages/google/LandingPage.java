@@ -16,7 +16,6 @@ public class LandingPage {
         this.storeButton =  driver.findElement(By.xpath("//a[text()='Store']"));
     }
 
-
     public void clickOnAboutButton() {
         aboutButton.click();
     }
