@@ -3,8 +3,7 @@ package tests.amazon;
 import base.BaseTest;
 import org.testng.annotations.Test;
 import pages.amazon.CreateYourAmazonAccount_PF;
-import pages.amazon.DashboardPage;
-import pages.amazon.Dashboard_PF;
+import pages.amazon.dashboardPF;
 import pages.amazon.SignInPage_PF;
 import utils.WaitUtils;
 
@@ -14,7 +13,7 @@ public class CreateAmazonAccount extends BaseTest {
     @Test
     public void createAccount() {
         WaitUtils.applyGlobalWait();
-        var amazonDashboardPage = new DashboardPage(driver);
+        var amazonDashboardPage = new dashboardPF(driver);
         var amazonSignInPage = new SignInPage_PF(driver);
         var amazonCreateYourAccountPage = new CreateYourAmazonAccount_PF(driver);
         amazonDashboardPage.clickOnSignInButton();

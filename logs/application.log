@@ -1,0 +1,22 @@
+2024-12-03 20:59:04 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-03 20:59:18 INFO  BaseTest:33 - Started test with URL https://www.amazon.com/
+2024-12-03 21:00:53 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-03 21:00:59 INFO  BaseTest:33 - Started test with URL https://www.amazon.com/
+2024-12-03 21:02:14 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-03 21:02:19 INFO  BaseTest:33 - Started test with URL https://www.amazon.com/
+2024-12-03 21:02:37 INFO  BaseTest:33 - Started test with URL https://www.amazon.com/
+2024-12-06 14:25:44 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-06 14:25:47 INFO  BaseTest:33 - Started test with URL https://www.google.com/
+2024-12-06 14:26:15 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-06 14:26:18 INFO  BaseTest:33 - Started test with URL https://www.google.com/
+2024-12-06 14:26:41 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-06 14:26:44 INFO  BaseTest:33 - Started test with URL https://www.google.com/
+2024-12-06 14:28:19 INFO  ConfigManager:49 - Configuration loaded for environment DEV
+2024-12-06 14:28:23 INFO  Base:20 - Navigating to URL: https://www.google.com/
+2024-12-06 14:28:25 INFO  Base:20 - Navigating to URL: https://www.google.com/
+2024-12-06 14:28:25 INFO  Base:27 - Driver instance is quit after the test.https://www.google.com/
+2024-12-06 14:28:26 INFO  Base:27 - Driver instance is quit after the test.https://www.google.com/
+2024-12-06 14:28:28 INFO  Base:20 - Navigating to URL: https://www.google.com/
+2024-12-06 14:28:30 INFO  Base:20 - Navigating to URL: https://www.google.com/
+2024-12-06 14:28:35 INFO  Base:27 - Driver instance is quit after the test.https://www.google.com/
+2024-12-06 14:28:35 INFO  Base:27 - Driver instance is quit after the test.https://www.google.com/

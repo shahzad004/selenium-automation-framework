@@ -10,13 +10,13 @@ import io.cucumber.java.en.When;
 import org.junit.After;
 import org.junit.Assert;
 import pages.amazon.CreateYourAmazonAccount_PF;
-import pages.amazon.DashboardPage;
+import pages.amazon.dashboardPF;
 import pages.amazon.SignInPage_PF;
 import utils.WaitUtils;
 
 public class CreateAmazonAccountSteps extends BaseTest {
 
-    DashboardPage amazonDashboardPage;
+    dashboardPF amazonDashboardPage;
     SignInPage_PF amazonSignInPage;
     CreateYourAmazonAccount_PF amazonCreateAccountPage;
 
@@ -24,7 +24,7 @@ public class CreateAmazonAccountSteps extends BaseTest {
     public void setupDriver() {
         setup();
 
-        this.amazonDashboardPage =  new DashboardPage(driver);
+        this.amazonDashboardPage =  new dashboardPF(driver);
         this.amazonSignInPage = new SignInPage_PF(driver);
         this.amazonCreateAccountPage = new CreateYourAmazonAccount_PF(driver);
     }
