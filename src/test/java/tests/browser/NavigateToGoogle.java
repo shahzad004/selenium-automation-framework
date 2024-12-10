@@ -1,32 +1,37 @@
 package tests.browser;
 
+import enums.WaitStrategy;
 import org.testng.annotations.Test;
 import pages.google.LandingPage;
 
 public class NavigateToGoogle extends Base {
 
     @Test
-    public void NavigateToAboutPageTest() throws InterruptedException {
+    public void NavigateToAboutPageTest() {
         LandingPage landingPage = new LandingPage(driver);
-        Thread.sleep(1000);
+        WaitUtils.globalWait();
+        WaitUtils.waitForPresence(driver, landingPage.gmailButton);
+        WaitUtils.applyWait(driver, landingPage.aboutButton, WaitStrategy.CLICKABLE);
         landingPage.clickOnAboutButton();
-        Thread.sleep(2000);
+        WaitUtils.globalWait();
     }
 
     @Test
-    public void navigateToStorePageTest() throws InterruptedException {
+    public void navigateToStorePageTest() {
         LandingPage landingPage = new LandingPage(driver);
-        Thread.sleep(1000);
+        WaitUtils.globalWait();
+        WaitUtils.applyWait(driver, landingPage.storeButton, WaitStrategy.CLICKABLE);
         landingPage.clickOnStoreButton();
-        Thread.sleep(2000);
+        WaitUtils.globalWait();
     }
 
     @Test
-    public void NavigateToAboutTwoPageTest() throws InterruptedException {
+    public void NavigateToAboutTwoPageTest() {
         LandingPage landingPage = new LandingPage(driver);
-        Thread.sleep(1000);
+        WaitUtils.globalWait();
+        WaitUtils.applyWait(driver, landingPage.aboutButton, WaitStrategy.CLICKABLE);
         landingPage.clickOnAboutButton();
-        Thread.sleep(2000);
+        WaitUtils.globalWait();
     }
 
 }

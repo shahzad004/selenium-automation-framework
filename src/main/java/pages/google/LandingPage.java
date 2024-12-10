@@ -7,13 +7,15 @@ import org.openqa.selenium.WebElement;
 public class LandingPage {
 
     private final WebDriver driver;
-    private final WebElement aboutButton;
-    private final WebElement storeButton;
+    public final WebElement aboutButton;
+    public final WebElement storeButton;
+    public final By gmailButton;
 
     public LandingPage(WebDriver driver) {
         this.driver = driver;
         this.aboutButton =  driver.findElement(By.xpath("//a[text()='About']"));
         this.storeButton =  driver.findElement(By.xpath("//a[text()='Store']"));
+        this.gmailButton = By.xpath("//a[text()='Gmail']");
     }
 
     public void clickOnAboutButton() {
@@ -23,6 +25,8 @@ public class LandingPage {
     public void clickOnStoreButton() {
         storeButton.click();
     }
+
+//    public void clickOnGmailButton() { gmailButton.cl }
 
 
 }
