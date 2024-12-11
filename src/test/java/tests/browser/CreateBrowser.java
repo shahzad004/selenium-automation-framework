@@ -16,7 +16,7 @@ public class CreateBrowser extends Base {
 
     public static void main(String[] args) {
 
-        DriverManager.initializeWebDriver();
+//        DriverManager.initializeWebDriver();
 
     }
 

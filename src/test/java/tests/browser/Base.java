@@ -11,21 +11,19 @@ public class Base {
 
     public WebDriver driver;
     private final String baseUrl = ConfigManager.getProperty("baseUrl");
-    private final Logger logger = LogManager.getLogger(Base.class);
+    private final Logger logger = LogManager.getLogger(this);
 
     @BeforeMethod
     public void setup() {
-        driver = DriverManager.initializeWebDriver();
+        driver = DriverManager.getDriver();
         driver.get(baseUrl);
-        logger.info("Navigating to URL: " + baseUrl);
+        logger.info("Navigating to URL: {}", baseUrl);
     }
 
     @AfterMethod
     public void tearDown() {
-        if ( driver != null ) {
-            driver.quit();
-            logger.info("Driver instance is quit after the test." + baseUrl);
-        }
+        DriverManager.quitDriver();
+        logger.info("Driver instance is quit after the test.");
     }
 
 }

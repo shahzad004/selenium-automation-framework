@@ -10,12 +10,14 @@ public class LandingPage {
     public final WebElement aboutButton;
     public final WebElement storeButton;
     public final By gmailButton;
+    public final WebElement signInButton;
 
     public LandingPage(WebDriver driver) {
         this.driver = driver;
         this.aboutButton =  driver.findElement(By.xpath("//a[text()='About']"));
         this.storeButton =  driver.findElement(By.xpath("//a[text()='Store']"));
         this.gmailButton = By.xpath("//a[text()='Gmail']");
+        this.signInButton = driver.findElement(By.xpath("//a[@aria-label='Sign in']"));
     }
 
     public void clickOnAboutButton() {
@@ -26,7 +28,9 @@ public class LandingPage {
         storeButton.click();
     }
 
-//    public void clickOnGmailButton() { gmailButton.cl }
+    public void clickOnSignInButton() { signInButton.click(); }
+
+    public void clickOnGmailButton() { driver.findElement(gmailButton).click(); }
 
 
 }

@@ -4,6 +4,9 @@ public class MethodPractice {
 
     public static void main(String[] args) {
 
+
+
+
         MethodPractice.printMessage();
         printMessage("John");
         printMessage("Alex");

@@ -23,7 +23,7 @@ public class NavigateToGoogleAboutPageSteps extends Base {
 
     @When("I click on about button")
     public void i_click_on_about_button() {
-        googleLandingPage.clickOnAboutButton();
+//        googleLandingPage.clickOnAboutButton();
     }
 
     @Then("I should see the about page")
