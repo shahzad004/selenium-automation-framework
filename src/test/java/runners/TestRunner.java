@@ -5,6 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 
 @CucumberOptions(
         features = "src/test/resources/features",
-        glue = "stepdefinations"
+        glue = "stepdefinations",
+        tags = "@googleEnterEmail"
 )
 public class TestRunner extends AbstractTestNGCucumberTests {}

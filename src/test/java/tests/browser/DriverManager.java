@@ -28,6 +28,7 @@ public class DriverManager {
     private static void initializeWebDriver() {
 
         Browser browserName = Browser.valueOf(ConfigManager.getProperty("browser").toUpperCase());
+        System.out.println("Browser: " + browserName );
         boolean isHeadless = Boolean.parseBoolean(ConfigManager.getProperty("isHeadless"));
         System.out.println("Headless mode: " + isHeadless);
 
@@ -66,6 +67,7 @@ public class DriverManager {
         }
 
         webDriver.manage().window().maximize();
+        System.out.println("Driver: " + driver );
         driver.set(webDriver);
     }
 

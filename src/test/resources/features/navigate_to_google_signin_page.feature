@@ -1,3 +1,4 @@
+@googleSignIn
 Feature: Navigate to google signIn page
 
   Scenario: User should be able to navigate to google sign in page
