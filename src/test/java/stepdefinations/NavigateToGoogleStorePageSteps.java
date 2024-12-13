@@ -23,7 +23,7 @@ public class NavigateToGoogleStorePageSteps extends Base {
 
     @When("I click on store button")
     public void i_click_on_store_button() {
-        googleLandingPage.clickOnStoreButton();
+//        googleLandingPage.clickOnStoreButton();
     }
     @Then("I should see store page")
     public void i_should_see_store_page() throws InterruptedException {

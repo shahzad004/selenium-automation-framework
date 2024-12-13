@@ -14,17 +14,25 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 
 public class DriverManager {
 
-   private static WebDriver driver;
+//   private static WebDriver driver;
+   private static final ThreadLocal<WebDriver> driver = new ThreadLocal<>();
 
-   static {
-       initializeWebDriver();
+   public static WebDriver getDriver() {
+       if ( driver.get() == null ) {
+           initializeWebDriver();
+       }
+       return driver.get();
    }
-   
-    public static WebDriver initializeWebDriver() {
+
+
+    private static void initializeWebDriver() {
 
         Browser browserName = Browser.valueOf(ConfigManager.getProperty("browser").toUpperCase());
+        System.out.println("Browser: " + browserName );
         boolean isHeadless = Boolean.parseBoolean(ConfigManager.getProperty("isHeadless"));
         System.out.println("Headless mode: " + isHeadless);
+
+        WebDriver webDriver;
 
         switch (browserName) {
             case CHROME:
@@ -33,7 +41,7 @@ public class DriverManager {
                 if ( isHeadless ) {
                     chromeOptions.addArguments("--headless");
                 }
-                driver = new ChromeDriver(chromeOptions);
+                webDriver = new ChromeDriver(chromeOptions);
                 break;
             case FIREFOX:
                 WebDriverManager.firefoxdriver().setup();
@@ -41,7 +49,7 @@ public class DriverManager {
                 if ( isHeadless ) {
                     fireFoxOptions.addArguments("--headless");
                 }
-                driver = new FirefoxDriver(fireFoxOptions);
+                webDriver = new FirefoxDriver(fireFoxOptions);
                 break;
             case EDGE:
                 WebDriverManager.edgedriver().setup();
@@ -49,7 +57,7 @@ public class DriverManager {
                 if ( isHeadless ) {
                     edgeOptions.addArguments("--headless");
                 }
-                driver = new EdgeDriver(edgeOptions);
+                webDriver = new EdgeDriver(edgeOptions);
                 break;
            /* case "SAFARI":
                 driver = new SafariDriver(safariOptions);
@@ -58,8 +66,16 @@ public class DriverManager {
                 throw new IllegalArgumentException("Invalid browser name");
         }
 
-        driver.manage().window().maximize();
-        return driver;
+        webDriver.manage().window().maximize();
+        System.out.println("Driver: " + driver );
+        driver.set(webDriver);
+    }
+
+    public static void quitDriver() {
+        if ( driver.get() != null ) {
+            driver.get().quit();
+            driver.remove();
+        }
     }
 
 }

@@ -4,6 +4,9 @@ import enums.WaitStrategy;
 import org.testng.annotations.Test;
 import pages.google.LandingPage;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 public class SimpleSeleniumTest extends Base {
 

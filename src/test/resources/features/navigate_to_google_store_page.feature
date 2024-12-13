@@ -1,3 +1,4 @@
+@navigation
 Feature: Google Navigation
 
   Scenario: Navigate to Google Store Page
